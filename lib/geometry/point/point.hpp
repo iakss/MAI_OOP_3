@@ -1,10 +1,11 @@
 #pragma once
 
 #include <iostream>
+#include <limits>
 
 namespace lib::geometry {
 
-constexpr double EPS = 1e-6;
+constexpr double EPS = std::numeric_limits<double>::epsilon();
 
 class Point {
 public:
