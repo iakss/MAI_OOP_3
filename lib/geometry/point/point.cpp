@@ -48,8 +48,20 @@ Point operator*(const double number, const Point &point) noexcept {
   return Point(number * point.x, number * point.y);
 }
 
+Point operator*(const Point &point, const double number) noexcept {
+  return number * point;
+}
+
 Point operator/(const Point &point, const double number) noexcept {
   return Point(point.x / number, point.y / number);
+}
+
+bool operator==(const Point &first, const Point &second) noexcept {
+  return std::fabs(static_cast<double>(first - second)) < EPS;
+}
+
+bool operator!=(const Point &first, const Point &second) noexcept {
+  return !(first == second);
 }
 
 std::istream &operator>>(std::istream &is, Point &point) {
@@ -58,7 +70,7 @@ std::istream &operator>>(std::istream &is, Point &point) {
   return is;
 }
 
-std::ostream &operator<<(std::ostream &os, Point &point) {
+std::ostream &operator<<(std::ostream &os, const Point &point) {
   os << "(" << point.x << ", " << point.y << ")";
   return os;
 }

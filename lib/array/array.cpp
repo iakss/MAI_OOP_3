@@ -51,6 +51,14 @@ Array &Array::operator=(Array &&other) noexcept {
   return *this;
 }
 
+geometry::Figure *Array::operator[](std::size_t pos) noexcept {
+  return data_[pos];
+}
+
+geometry::Figure *const Array::operator[](std::size_t pos) const noexcept {
+  return data_[pos];
+}
+
 geometry::Figure *Array::Front() noexcept { return data_[0]; }
 
 geometry::Figure *const Array::Front() const noexcept { return data_[0]; }
@@ -126,14 +134,14 @@ void Array::Erase(std::size_t pos) {
 
 void Array::PrintCenters() const noexcept {
   for (std::size_t i = 0; i < size_; ++i) {
-    std::cout << i + 1 << "Figure center: " << data_[i]->GetCenter()
+    std::cout << i + 1 << " Figure center: " << data_[i]->GetCenter()
               << std::endl;
   }
 }
 
 void Array::PrintAreas() const noexcept {
   for (std::size_t i = 0; i < size_; ++i) {
-    std::cout << i + 1 << "Figure area: " << static_cast<double>(*data_[i])
+    std::cout << i + 1 << " Figure area: " << static_cast<double>(*data_[i])
               << std::endl;
   }
 }

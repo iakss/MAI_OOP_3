@@ -29,6 +29,20 @@ Point Hexagon::GetCenter() const noexcept {
   return point_sum / HEXAGONS_NUMBER_OF_VERTICES;
 }
 
+// I assume that all the vercites are always enterted in the same order
+bool operator==(const Hexagon &first, const Hexagon &second) noexcept {
+  for (std::size_t i = 0; i < HEXAGONS_NUMBER_OF_VERTICES; ++i) {
+    if (first.points_[i] != second.points_[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool operator!=(const Hexagon &first, const Hexagon &second) noexcept {
+  return !(first == second);
+}
+
 void Hexagon::Print(std::ostream &os) const {
   os << "Hexagon's vertices: ";
   for (std::size_t i = 0; i < HEXAGONS_NUMBER_OF_VERTICES; ++i) {

@@ -29,6 +29,20 @@ Point Pentagon::GetCenter() const noexcept {
   return point_sum / PENTAGONS_NUMBER_OF_VERTICES;
 }
 
+// I assume that all the vercites are always enterted in the same order
+bool operator==(const Pentagon &first, const Pentagon &second) noexcept {
+  for (std::size_t i = 0; i < PENTAGONS_NUMBER_OF_VERTICES; ++i) {
+    if (first.points_[i] != second.points_[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool operator!=(const Pentagon &first, const Pentagon &second) noexcept {
+  return !(first == second);
+}
+
 void Pentagon::Print(std::ostream &os) const {
   os << "Pentagon's vertices: ";
   for (std::size_t i = 0; i < PENTAGONS_NUMBER_OF_VERTICES; ++i) {
