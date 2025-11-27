@@ -23,15 +23,15 @@ Octagon::operator double() const noexcept {
 
 Point Octagon::GetCenter() const noexcept {
   Point point_sum = Point();
-  for (size_t i = 0; i < OCTAGONS_NUMBER_OF_VERTICES; ++i) {
+  for (size_t i = 0; i < number_of_vertices; ++i) {
     point_sum += points_[i];
   }
-  return point_sum / OCTAGONS_NUMBER_OF_VERTICES;
+  return point_sum / number_of_vertices;
 }
 
 // I assume that all the vercites are always enterted in the same order
 bool operator==(const Octagon &first, const Octagon &second) noexcept {
-  for (std::size_t i = 0; i < OCTAGONS_NUMBER_OF_VERTICES; ++i) {
+  for (std::size_t i = 0; i < Octagon::number_of_vertices; ++i) {
     if (first.points_[i] != second.points_[i]) {
       return false;
     }
@@ -45,13 +45,13 @@ bool operator!=(const Octagon &first, const Octagon &second) noexcept {
 
 void Octagon::Print(std::ostream &os) const {
   os << "Octagon's vertices: ";
-  for (std::size_t i = 0; i < OCTAGONS_NUMBER_OF_VERTICES; ++i) {
+  for (std::size_t i = 0; i < number_of_vertices; ++i) {
     os << points_[i];
   }
 }
 
 void Octagon::Read(std::istream &is) {
-  for (size_t i = 0; i < OCTAGONS_NUMBER_OF_VERTICES; ++i) {
+  for (size_t i = 0; i < number_of_vertices; ++i) {
     is >> points_[i];
   }
 }

@@ -4,8 +4,6 @@
 
 namespace lib::geometry {
 
-const double EPS = 1e-6;
-
 class Point {
 public:
   Point() noexcept;
@@ -20,6 +18,7 @@ public:
 public:
   double x;
   double y;
+  static constexpr double EPS = 1e-6;
 };
 
 Point operator+(const Point &first, const Point &second) noexcept;

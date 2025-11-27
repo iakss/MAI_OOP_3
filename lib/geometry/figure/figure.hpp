@@ -16,4 +16,7 @@ public:
   friend std::ostream &operator<<(std::ostream &os, const Figure &f);
   friend std::istream &operator>>(std::istream &is, Figure &f);
 };
+
+std::ostream &operator<<(std::ostream &os, const Figure &f);
+std::istream &operator>>(std::istream &is, Figure &f);
 } // namespace lib::geometry
