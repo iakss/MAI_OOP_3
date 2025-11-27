@@ -57,7 +57,7 @@ Point operator/(const Point &point, const double number) noexcept {
 }
 
 bool operator==(const Point &first, const Point &second) noexcept {
-  return std::fabs(static_cast<double>(first - second)) < Point::EPS;
+  return std::fabs(static_cast<double>(first - second)) < EPS;
 }
 
 bool operator!=(const Point &first, const Point &second) noexcept {

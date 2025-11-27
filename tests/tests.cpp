@@ -12,7 +12,7 @@ protected:
   void SetUp() override {
     p1 = lib::geometry::Point(1.0, 2.0);
     p2 = lib::geometry::Point(3.0, 4.0);
-    p3 = lib::geometry::Point(1.0 + lib::geometry::Point::EPS / 2, 2.0);
+    p3 = lib::geometry::Point(1.0 + lib::geometry::EPS / 2, 2.0);
   }
 
   lib::geometry::Point p0; // default (0, 0)
@@ -155,8 +155,8 @@ TEST_F(PentagonTest, AreaCalculation) {
 TEST_F(PentagonTest, CenterCalculation) {
   lib::geometry::Point center = pentagon1.GetCenter();
   // For a regular pentagon centered at origin, center should be near (0,0)
-  EXPECT_NEAR(center.x, 0.0, lib::geometry::Point::EPS);
-  EXPECT_NEAR(center.y, 0.0, lib::geometry::Point::EPS);
+  EXPECT_NEAR(center.x, 0.0, lib::geometry::EPS);
+  EXPECT_NEAR(center.y, 0.0, lib::geometry::EPS);
 }
 
 TEST_F(PentagonTest, Equality) {
@@ -228,8 +228,8 @@ TEST_F(HexagonTest, AreaCalculation) {
 
 TEST_F(HexagonTest, CenterCalculation) {
   lib::geometry::Point center = hexagon1.GetCenter();
-  EXPECT_NEAR(center.x, 0.0, lib::geometry::Point::EPS);
-  EXPECT_NEAR(center.y, 0.0, lib::geometry::Point::EPS);
+  EXPECT_NEAR(center.x, 0.0, lib::geometry::EPS);
+  EXPECT_NEAR(center.y, 0.0, lib::geometry::EPS);
 }
 
 TEST_F(HexagonTest, Equality) {
@@ -298,8 +298,8 @@ TEST_F(OctagonTest, AreaCalculation) {
 
 TEST_F(OctagonTest, CenterCalculation) {
   lib::geometry::Point center = octagon1.GetCenter();
-  EXPECT_NEAR(center.x, 0.0, lib::geometry::Point::EPS);
-  EXPECT_NEAR(center.y, 0.0, lib::geometry::Point::EPS);
+  EXPECT_NEAR(center.x, 0.0, lib::geometry::EPS);
+  EXPECT_NEAR(center.y, 0.0, lib::geometry::EPS);
 }
 
 TEST_F(OctagonTest, Equality) {
