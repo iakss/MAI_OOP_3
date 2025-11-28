@@ -6,7 +6,7 @@ namespace lib::geometry {
 
 class Hexagon : public Figure {
 public:
-  static constexpr std::size_t number_of_vertices = 6;
+  static constexpr std::size_t NUMBER_OF_VERTICES = 6;
 
   Hexagon() noexcept;
 
@@ -24,6 +24,6 @@ public:
   friend bool operator!=(const Hexagon &first, const Hexagon &second) noexcept;
 
 private:
-  Point points_[number_of_vertices];
+  Point points_[NUMBER_OF_VERTICES];
 };
 } // namespace lib::geometry

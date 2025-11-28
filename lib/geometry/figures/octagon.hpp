@@ -6,7 +6,7 @@ namespace lib::geometry {
 
 class Octagon : public Figure {
 public:
-  static constexpr std::size_t number_of_vertices = 8;
+  static constexpr std::size_t NUMBER_OF_VERTICES = 8;
 
   Octagon() noexcept;
 
@@ -24,6 +24,6 @@ public:
   friend bool operator!=(const Octagon &first, const Octagon &second) noexcept;
 
 private:
-  Point points_[number_of_vertices];
+  Point points_[NUMBER_OF_VERTICES];
 };
 } // namespace lib::geometry
