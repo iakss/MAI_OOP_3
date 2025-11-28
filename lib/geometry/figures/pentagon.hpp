@@ -6,6 +6,8 @@ namespace lib::geometry {
 
 class Pentagon : public Figure {
 public:
+  static constexpr std::size_t number_of_vertices = 5;
+
   Pentagon() noexcept;
 
   Pentagon &operator=(const Pentagon &other);
@@ -24,7 +26,6 @@ public:
                          const Pentagon &second) noexcept;
 
 private:
-  static constexpr std::size_t number_of_vertices = 5;
   Point points_[number_of_vertices];
 };
 } // namespace lib::geometry
